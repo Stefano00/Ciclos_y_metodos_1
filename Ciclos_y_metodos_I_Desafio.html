@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ciclos y métodos I</title>
+</head>
+<script>
+    document.write('<p>Ingrese un número entre el 1 y el 5</p>');
+    let ingreso=0;
+    var opcion=false;
+    while (opcion==false) {
+    ingreso = prompt("Ingrese un número entre el 1 y el 5: ");
+        if (ingreso < 1 || ingreso > 5) {
+            document.write('<p>Opción incorrecta. Ingrese un número entre el 1 y el 5</p>');
+    }
+    else if (ingreso > 0 && ingreso < 6){
+        opcion=true;
+        document.write(`<p>Opción ingresada es: ${ingreso} </p>`);
+    }
+
+}
+    //Opcion 1
+if(ingreso=="1"){
+     opcion1();
+   
+}
+else if(ingreso=="2"){
+     opcion2();
+ 
+}
+
+else if(ingreso=="3"){
+     opcion3();
+   
+}
+
+else if(ingreso=="4"){
+     opcion4();
+    
+}
+   
+else if(ingreso=="5"){
+     opcion5();
+ 
+}
+
+
+function opcion1(){
+    ingreso_numeros = prompt("Ingrese un número entre el 1 y el 100: ");
+    if(ingreso_numeros<=100 && ingreso_numeros>0){
+        for(let i=1;i<=ingreso_numeros;i++){
+        document.write(`<p>Contador en:  ${i} </p>`);
+        }
+    }
+    else{
+        alert("Número ingresado incorrecto");
+    }
+}
+function opcion2(){
+    ingreso_respuesta="";
+    while(ingreso_respuesta!="blanco"){
+        ingreso_respuesta = prompt("¿De qué color es el cabalo blanco de Napoleón?");
+        if(ingreso_respuesta=="blanco"){
+            document.write(`<p>Respuesta correcta:  ${ingreso_respuesta} </p>`);
+        }
+
+    }
+  
+}
+function opcion3(){
+    var cont=0;
+    promedio_mat = prompt("Ingrese promedio de Matemáticas");
+    if((promedio_mat>=1 && promedio_mat<=7)==false){
+        alert("El promedio tiene que ser entre 1 y 7");
+        cont=1;
+    }
+    
+    promedio_fis = prompt("Ingrese promedio de Física");
+    if((promedio_fis>=1 && promedio_fis<=7)==false){
+        alert("El promedio tiene que ser entre 1 y 7");
+        cont=1;
+    }
+    promedio_cie = prompt("Ingrese promedio de Ciencias");
+    if((promedio_cie>=1 && promedio_cie<=7)==false){
+        alert("El promedio tiene que ser entre 1 y 7");
+        cont=1;
+    }
+    if(cont==0){
+        promedio_total=(Number(promedio_mat)+Number(promedio_fis)+Number(promedio_cie))/3;
+        var round = Math.round(promedio_total*10)/10;
+        alert("El promedio total es de :" + round);
+    }
+    else{
+        alert("Un promedio de nota no corresponde con el mencionado anteriormente");
+    }
+   
+
+}
+function opcion4(){
+    
+    var fruta={fruta1:"", fruta2:"", fruta3:""};
+    
+    for(x in fruta){
+        fruta[x]=prompt("Ingrese el nombre de la " + x );
+        if(fruta[x] == "manzana"){
+            fruta[x]="No se mostrará el nombre de esta fruta";
+        }
+    }
+    for(x in fruta){
+        console.log(x + " ingresada es : " + fruta[x]);
+    }
+}
+function opcion5(){
+    var ingresar_nombre="";
+    ingresar_nombre=prompt("Ingrese su nombre");
+    if(ingresar_nombre==""){
+        alert("Ingrese algún nombre");
+    }
+    var numeroVocales=ingresar_nombre.match(/[aeiou]/gi).length;
+    var numeroConsonantes=ingresar_nombre.match(/[bcdfghjklmnñpqrstvwxyz]/gi).length;
+    alert("Número de vocales: " + numeroVocales);
+    alert("Número de consonantes: " + numeroConsonantes);
+
+}
+
+</script>
+<body>
+    
+</body>
+</html>
